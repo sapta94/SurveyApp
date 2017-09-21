@@ -1,0 +1,24 @@
+{
+  "name": "survey_app",
+  "version": "1.0.0",
+  "description": "MERN stack app for survey and feedback purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sapta94/SurveyApp.git"
+  },
+  "author": "SapD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sapta94/SurveyApp/issues"
+  },
+  "homepage": "https://github.com/sapta94/SurveyApp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "nodemon": "^1.12.1"
+  }
+}
