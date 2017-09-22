@@ -7,7 +7,7 @@ var authenticate = require('./routes/authenticate')
 
 app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json())
-
+app.use('/',authenticate);
 
 
 
