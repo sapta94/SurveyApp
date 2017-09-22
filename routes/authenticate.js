@@ -10,4 +10,6 @@ passport.use(new GoogleAuth({
     clientID:config.clientID,
     clientSecret:config.clientSecret,
     callbackURL:'/auth/google/callback'
+},function(accessToken){
+    console.log(accessToken)
 }))
