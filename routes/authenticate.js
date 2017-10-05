@@ -4,7 +4,7 @@ var passport = require("passport");
 
 module.exports = function(app) {
   //route handler to take user to google server
-  router.get(
+  app.get(
     "/auth/google",
     passport.authenticate("google", {
       scope: ["profile", "email"]
@@ -12,5 +12,5 @@ module.exports = function(app) {
   );
 
   //route handler to handle callback after verification
-  router.get("/auth/google/callback", passport.authenticate("google"));
+  app.get("/auth/google/callback", passport.authenticate("google"));
 };
