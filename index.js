@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 const path = require('path')
+require('./models/user')
 const passportConfig = require('./services/passport')
 var bodyParser = require('body-parser')
 const mongoose = require('mongoose')
@@ -10,7 +11,9 @@ var authenticate = require('./routes/authenticate')
 
 mongoose.connect(config.mongoUri)
 
+
 require('./routes/authenticate')(app)
+
 
 app.use(bodyParser.urlencoded({ extended:true}))
 app.use(bodyParser.json())
