@@ -14,9 +14,14 @@ passport.use(
         callbackURL: "/auth/google/callback"
       },
       function(accessToken,refreshToken,profile,done) { //callback after getting authenticated by google
-       new User({
-        googleID:profile.id
-       }).save();
+        User.findOne({googleID:profile.id}).then(function(existingUser){
+          if(existingUser){
+            done(null,existingUser)
+          }
+          else{
+            new User({googleID:profile.id}).save().then(user => done(null,user));
+          }
+        }) 
       }
     )
   );
