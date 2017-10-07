@@ -5,6 +5,10 @@ var mongoose=require('mongoose')
 
 const User = mongoose.model('users')
 
+passport.serializeUser(function(user,done){
+  done(null,user.id)
+})
+
 //define gogole strategy with passport
 passport.use(
     new GoogleAuth(
