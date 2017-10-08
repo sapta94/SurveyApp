@@ -9,6 +9,12 @@ passport.serializeUser(function(user,done){
   done(null,user.id)
 })
 
+passport.deserializeUser(function(id,done){
+  User.findById(id).then(function(user){
+    done(null,user)
+  })
+})
+
 //define gogole strategy with passport
 passport.use(
     new GoogleAuth(

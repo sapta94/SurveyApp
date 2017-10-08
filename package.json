@@ -19,6 +19,7 @@
   "homepage": "https://github.com/sapta94/SurveyApp#readme",
   "dependencies": {
     "body-parser": "^1.18.1",
+    "cookie-session": "^1.3.2",
     "express": "^4.15.4",
     "mongoose": "^4.11.12",
     "nodemon": "^1.12.1",
