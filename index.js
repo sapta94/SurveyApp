@@ -15,11 +15,14 @@ mongoose.connect(config.mongoUri)
 
 
 app.use(
-    cookieSession({
+   scookieSession({
         maxAge: 30*24*24*60*60*1000,
         keys: [config.cookieKey]
     })
 )
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('./routes/authenticate')(app)
 
