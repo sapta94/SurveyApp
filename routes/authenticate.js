@@ -14,6 +14,11 @@ module.exports = function(app) {
   //route handler to handle callback after verification
   app.get("/auth/google/callback", passport.authenticate("google"));
 
+  app.get('/auth/logout',function(req,res){
+    req.logout();
+    res.send(req.user);
+  })
+
   app.get('/api/currentUser',function(req,res){
     console.log(req.user)
     res.send(req.user)
