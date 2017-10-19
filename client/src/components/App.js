@@ -1,9 +1,16 @@
 import React from 'react'
+import {BrowserRouter,Route} from 'react-router-dom'
+
+const Landing = ()=> <h2>Landing</h2>
 
 const App= function(){
     return(
         <div>
-            <h2>Hi react</h2>
+           <BrowserRouter>
+                <div>
+                    <Route path="/" component={Landing} />
+                </div>
+           </BrowserRouter>
         </div>
     )
 }
