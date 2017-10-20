@@ -2,13 +2,14 @@ import React from 'react'
 import {BrowserRouter,Route} from 'react-router-dom'
 
 import Header from './Header'
+import Dashboard from './Dashboard'
 const Landing = ()=> <h2>Landing</h2>
-const Dashboard = () => <h2>Dashboard</h2>
+//const Dashboard = () => <h2>Dashboard</h2>
 const SurveyNew = () => <h2>Survey New</h2>
 
 const App= function(){
     return(
-        <div>
+        <div className="container">
            <BrowserRouter>
                 <div>
                     <Header />
