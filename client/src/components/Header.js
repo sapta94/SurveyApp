@@ -5,21 +5,11 @@ class Header extends Component{
     renderContent(){
         switch(this.props.auth){
             case null:
-                return( <div className="preloader-wrapper active">
-                <div className="spinner-layer spinner-red-only">
-                  <div className="circle-clipper left">
-                    <div className="circle"></div>
-                  </div><div className="gap-patch">
-                    <div className="circle"></div>
-                  </div><div className="circle-clipper right">
-                    <div className="circle"></div>
-                  </div>
-                </div>
-              </div>)
+                return;
             case false:
                 return <li><a href="/auth/google">Click to Login with Google</a></li>
             default:
-                return <li><a>Logout</a></li>
+                return <li><a href="/auth/logout">Logout</a></li>
         }
 
     }

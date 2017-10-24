@@ -17,12 +17,13 @@ module.exports = function(app) {
   });
 
   app.get('/auth/logout',function(req,res){
+    console.log('logout')
     req.logout();
-    res.send(req.user);
+    res.redirect('/');
   })
 
   app.get('/api/currentUser',function(req,res){
-    console.log(req.user)
+    //console.log(req.user)
     res.send(req.user)
   })
 };
