@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   //route handler to handle callback after verification
   app.get("/auth/google/callback", passport.authenticate("google"),function(req,res){
-    res.redirect('/surveys');
+    res.redirect('/survey');
   });
 
   app.get('/auth/logout',function(req,res){
