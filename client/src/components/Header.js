@@ -24,12 +24,12 @@ class Header extends Component{
                 return <li><a href="/auth/google">Click to Login with Google</a></li>
             default:
                 return [
-                <li><Payments /></li>,
-                <li><a href="/auth/logout">Logout</a></li>
+                <li key="1"><Payments /></li>,
+                <li key="2"><a href="/auth/logout">Logout</a></li>
             ]
         }
 
-    }
+    } 
     render(){
         return(
             <nav>
