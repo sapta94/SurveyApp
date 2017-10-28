@@ -28,6 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authenticate')(app)
+require('./routes/billing')(app)
 
 
 //app.use('/',authenticate);
