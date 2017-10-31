@@ -8,17 +8,9 @@ class Header extends Component{
         switch(this.props.auth){
             case null:
                 return (
-                    <div className="preloader-wrapper active">
-                    <div className="spinner-layer spinner-red-only">
-                      <div className="circle-clipper left">
-                        <div className="circle"></div>
-                      </div><div className="gap-patch">
-                        <div className="circle"></div>
-                      </div><div className="circle-clipper right">
-                        <div className="circle"></div>
-                      </div>
+                    <div className="progress">
+                        <div className="indeterminate"></div>
                     </div>
-                  </div>
                 );
             case false:
                 return <li><a href="/auth/google">Click to Login with Google</a></li>
