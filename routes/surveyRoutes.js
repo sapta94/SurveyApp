@@ -1,6 +1,6 @@
 const requireUSer = require('./requireUser')
 const mongoose = require('mongoose')
-const Surveys = mongoose.model('surveys')
+const Survey = mongoose.model('surveys')
 
 module.exports=function(app){
     app.post('/api/surveys',requireUSer,function(req,res){
@@ -8,5 +8,15 @@ module.exports=function(app){
             return res.status(401).send({error:'not enough credits'})
         }
         var {title,subject,body,recipients} = req.body
+        const survey = new Survey({
+            title,
+            subject,
+            title,
+            recipients:recipients.split(',').map(function(email){
+                return {email: email.trim()}
+            }),
+            _user:req.user.id,
+            dateSent: Date.now()
+        })
     })
 }
