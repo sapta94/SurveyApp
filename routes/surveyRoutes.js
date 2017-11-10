@@ -1,6 +1,9 @@
 const requireUSer = require('./requireUser')
 const mongoose = require('mongoose')
 const Survey = mongoose.model('surveys')
+const Mailer = require('../services/mailer');
+const surveyTemplate = require('../services/surveyTemplate');
+
 
 module.exports=function(app){
     app.post('/api/surveys',requireUSer,function(req,res){
@@ -18,5 +21,8 @@ module.exports=function(app){
             _user:req.user.id,
             dateSent: Date.now()
         })
+
+        const mailer = new Mailer(survey, surveyTemplate(survey));
+        mailer.send();
     })
 }
