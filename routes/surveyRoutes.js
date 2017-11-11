@@ -24,5 +24,6 @@ module.exports=function(app){
 
         const mailer = new Mailer(survey, surveyTemplate(survey));
         mailer.send();
+        console.log('mail sent')
     })
 }
