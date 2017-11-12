@@ -6,7 +6,7 @@ const surveyTemplate = require('../services/surveyTemplate');
 
 
 module.exports=function(app){
-    app.post('/api/surveys',requireUSer,function(req,res){
+    app.post('/api/surveys',requireUSer,async function(req,res){
         if(req.user.credits<1){
             return res.status(401).send({error:'not enough credits'})
         }
@@ -23,7 +23,18 @@ module.exports=function(app){
         })
 
         const mailer = new Mailer(survey, surveyTemplate(survey));
-        mailer.send();
-        console.log('mail sent')
+
+        try{
+            await mailer.send();
+            await survey.save();
+            req.user.credits-=1;
+            const user = req.user.save()
+
+            res.send(user)
+        } catch(err){
+            res.status(422).send(err)
+        }
+        
+        
     })
 }
