@@ -31,14 +31,14 @@ class Mailer extends helper.Mail{
         this.addTrackingSettings(trackSettings)
     }
 
-    addRecipients(){
-        const personalise = new helper.Personalization();
-
-        this.recipients.forEach(function(recipient){
-            personalise.addTo(recipient)
-        })
-        this.addPersonalization(personalise)
-    }
+    addRecipients() {
+        const personalize = new helper.Personalization();
+    
+        this.recipients.forEach(recipient => {
+          personalize.addTo(recipient);
+        });
+        this.addPersonalization('dey7.kol@gmail.com');
+      }
 
     async send(){
         const request = this.sgAPI.emptyRequest({
