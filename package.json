@@ -25,7 +25,6 @@
     "nodemon": "^1.12.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
-    "redux-form": "^7.1.2",
     "stripe": "^5.2.0"
   }
 }
