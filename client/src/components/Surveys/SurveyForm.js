@@ -12,7 +12,7 @@ const FIELDS = [
 ]
 
 class SurveyForm extends Component{
-    renderFileds(){
+    renderFields(){
         return _.map(FIELDS,({label,name})=>{
            return (
             <Field 
@@ -30,7 +30,7 @@ class SurveyForm extends Component{
         return(
             <div>
                 <form onSubmit={this.props.handleSubmit((values)=>console.log(values))}>
-                    {this.renderFileds()}
+                    {this.renderFields()}
                 <Link to="/survey" className="red btn-flat white text">Cancel</Link>
                 <button type="submit" className="red btn-flat white text">Next
                     <i className="material-icons right">done</i>
